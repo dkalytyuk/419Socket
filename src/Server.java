@@ -95,13 +95,13 @@ public class Server {
 	//-------------------------------------------------------------------------------------------
     
     private static boolean isPalindrome(String text) {
-    	String lowerText = text.toLowerCase();
-    	int start = 0, end = text.length()-1;
+    	text = text.toLowerCase();
+    	int start = -1, end = text.length();
     	while (start < end){
-    		while(!Character.isLetterOrDigit(lowerText.charAt(start++))) {}
-    		while(!Character.isLetterOrDigit(lowerText.charAt(end--))) {}
+    		while(!Character.isLetterOrDigit(text.charAt(++start))) {}
+    		while(!Character.isLetterOrDigit(text.charAt(--end))) {}
     			
-    		if(lowerText.charAt(start) != lowerText.charAt(end))
+    		if(text.charAt(start) != text.charAt(end))
     			return false;
     	} 		//end loop through text
     	return true;
